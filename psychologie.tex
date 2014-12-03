@@ -1,11 +1,20 @@
 % !TeX encoding = UTF-8
 % !TeX spellcheck = de_DE
+% !TeX compiler = xelatex
 % vim:ts=4
 \documentclass[12pt]{scrartcl}
 
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[ngerman]{babel}
+\usepackage{ifxetex}
+\ifxetex
+	\usepackage{polyglossia}
+	\setmainlanguage[spelling = new, babelshorthands = true]{german}
+	\usepackage{fontspec}
+\else
+	\usepackage[ngerman]{babel}
+	\usepackage[utf8]{inputenc}
+	\usepackage[T1]{fontenc}
+\fi
+
 \usepackage{xspace}
 \DeclareRobustCommand{\zB}{z.\,B.\xspace}
 
